@@ -3,7 +3,7 @@ API RESTful:
 1. CRUD de clientes: localhost:8080/customers 
 2. CRUD de cuentas: localhost:8080/accounts
 3. Registro de Operaciones localhost:8080/transactions
-4. Modelado de la base de datos: se encuentra en com.amk.test.cajero.App.java, debido a que se utilizó mongodb las colecciones se crean	al momento de insertar por lo que no hay necesidad de scripts para la creación de la bd.
+4. Modelado de la base de datos: se encuentra en com.amk.test.cajero.App.java, debido a que se utilizó mongodb las colecciones se crean	al momento de insertar por lo que no hay necesidad de scripts para la creación de la bd, sólo se requiere de una instancia local en ejecución apuntando al puerto 27017 (localhost:27017). 
 5. Motor de Base de Datos: MongoDB
 6. Diagrama E/R: DiagramaER.png
 7. Versionamiento de BD: NA
