@@ -18,6 +18,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.amk.test.cajero.entity.Account;
 import com.amk.test.cajero.repository.AccountRepository;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
+@Api(value="Account Controller")
 @Component
 @Path("/accounts")
 public class AccountController {
@@ -25,24 +29,28 @@ public class AccountController {
 	@Autowired
 	private AccountRepository accounts; 
 	
+    @ApiOperation(value="getAll", nickname="getAll", produces="MediaType.APPLICATION_JSON")
 	@GET
     @Produces(MediaType.APPLICATION_JSON)
 	public List<Account> getAll(){
 		return accounts.findAll();
 	}
 	
+    @ApiOperation(value="create", nickname="create", produces="MediaType.APPLICATION_JSON")
 	@POST
     @Produces(MediaType.APPLICATION_JSON)
 	public Account create(@RequestBody Account account){
 		return accounts.insert(account);
 	}
 	
+    @ApiOperation(value="delete", nickname="delete", produces="MediaType.APPLICATION_JSON")
 	@DELETE
     @Produces(MediaType.APPLICATION_JSON)
 	public @ResponseBody void delete(@RequestBody Account account){
 	  accounts.delete(account.id);
 	}
 	
+    @ApiOperation(value="update", nickname="update", produces="MediaType.APPLICATION_JSON")
 	@PUT
     @Produces(MediaType.APPLICATION_JSON)
 	public Account update(@RequestBody Account account){

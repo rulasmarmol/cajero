@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.amk.test.cajero.entity.Account;
 import com.amk.test.cajero.entity.Customer;
@@ -31,12 +29,6 @@ public class App implements CommandLineRunner
   
   @Autowired
   private TransactionRepository transactionRepository;
-  
-  @RequestMapping("/")
-  @ResponseBody
-  String home() {
-      return "cajero: Hello World!";
-  }
 
   public static void main(String[] args) throws Exception {
       SpringApplication.run(App.class, args);

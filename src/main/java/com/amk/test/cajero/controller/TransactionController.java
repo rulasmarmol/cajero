@@ -20,6 +20,10 @@ import com.amk.test.cajero.entity.Transaction;
 import com.amk.test.cajero.exception.AppException;
 import com.amk.test.cajero.repository.TransactionRepository;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
+@Api(value="Transaction Controller")
 @Component
 @Path("/transactions")
 public class TransactionController {
@@ -32,12 +36,14 @@ public class TransactionController {
       response.sendError(HttpStatus.BAD_REQUEST.value(), "Insufficient Balance");
   }
 
+  @ApiOperation(value="getAll", nickname="getAll", produces="MediaType.APPLICATION_JSON")
   @GET
   @Produces(MediaType.APPLICATION_JSON)
   public List<Transaction> getAll() {
     return transactions.findAll();
   }
 
+  @ApiOperation(value="create", nickname="create", produces="MediaType.APPLICATION_JSON")
   @POST
   @Produces(MediaType.APPLICATION_JSON)
 	public Transaction create(@RequestBody Transaction transaction) throws AppException{
