@@ -1,0 +1,15 @@
+API RESTful:
+
+1. CRUD de clientes: localhost:8080/customers 
+2. CRUD de cuentas: localhost:8080/accounts
+3. Registro de Operaciones localhost:8080/transactions
+4. Modelado de la base de datos: se encuentra en com.amk.test.cajero.App.java, debido a que se utilizó mongodb las colecciones se crean	al momento de insertar por lo que no hay necesidad de scripts para la creación de la bd.
+5. Motor de Base de Datos: MongoDB
+6. Diagrama E/R: DiagramaER.png
+7. Versionamiento de BD: NA
+8. Documentación API REST con Swagger: localhost:8080/swagger sólo pude crear la documentación en formato JSON ya que tuve problemas 	al aplicar swagger-ui.
+9. Pruebas Unitarias: com.amk.test.cajero.controllerTest sólo se hicieron pruebas básicas sobre los métodos GET y POST 
+10. Pruebas Integrales: no me dio tiempo
+11. Docker: no me dio tiempo
+12. Arquitectura: Los cruds deberían ser independientes de las transacciones y deberían estar en una API aparte embebidos en los 		microservicios que los utilicen, ya que si otro microservicio tiene que modificar a los clientes o a las cuentas dependería de esta API por lo cual deja de ser un microservicio.
+13. Dropwizard: No lo he usado aunque es muy parecido a spring boot. 
